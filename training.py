@@ -1,5 +1,6 @@
 from datetime import date
 
+
 class Training:
     """
     A class representing a training program with a name, start and end dates,

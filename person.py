@@ -9,6 +9,18 @@ class Person:
         self.age = age
         self.address = address
 
+    def set_address(self, road: str, city: str, zip_code: int) -> None:
+        self.address.road = road
+        self.address.city = city
+        self.address.zipCode = zip_code
+
+    def set_fullname(self, firstname: str, lastname: str) -> None:
+        self.firstname = firstname
+        self.lastname = lastname
+
+    def set_age(self, age: int) -> None:
+        self.age = age
+
     def get_firstname(self) -> str:
         return self.firstname
 
@@ -21,11 +33,11 @@ class Person:
     def get_fullname(self) -> str:
         return self.firstname + " " + self.lastname
 
-    def get_road(self):
+    def get_road(self) -> str:
         return self.address.road
 
-    def get_city(self):
+    def get_city(self) -> str:
         return self.address.city
 
-    def get_zip_code(self):
+    def get_zip_code(self) -> int:
         return self.address.zip_code
