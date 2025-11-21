@@ -1,21 +1,14 @@
+from address import Address
 from person import Person
 
 class Student(Person):
 
     number = None
 
-    
-
-    def __init__(self, number, firstName, lastName, age, road, city, zipCode):
-        super().__init__(firstName, lastName, age)
+    def __init__(self, number, firstname, lastname, age, address: Address):
+        super().__init__(firstname, lastname, age, address)
         self.number = number
-        self.set_address(road, city, zipCode)
         self.lessons = []
-
-    def set_address(self, road, city, zipCode):
-        self.road = road
-        self.city = city
-        self.zipCode = zipCode
 
     def get_number(self):
         return self.number
@@ -36,11 +29,11 @@ class Student(Person):
     def __str__(self):
         return (f"Student{{"
             f"number : {self.number}, "
-            f"name : {self.getFullName()}', "
-            f"age : {self.getAge()}, "
-            f"road : {self.road}', "
-            f"city : {self.city}', "
-            f"zipCode : {self.zipCode}"
+            f"name : {self.get_fullname()}, "
+            f"age : {self.get_age()}, "
+            f"road : {self.address.road}, "
+            f"city : {self.address.city}, "
+            f"zipCode : {self.address.zip_code}"
             f"}}")
     
     
