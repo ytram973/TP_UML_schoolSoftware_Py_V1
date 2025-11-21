@@ -1,16 +1,17 @@
 from person import Person
+from address import Address
 
 class Student(Person):
 
     number: int
 
-    def __init__(self, number: int, firstName: str, lastName: str, age: int, road: str, city: str, zipCode: int):
+    def __init__(self, number: int, firstName: str, lastName: str, age: int, address: Address):
         """
          Initialize a Student object.
         """
         super().__init__(firstName, lastName, age)
         self.number = number
-        self.set_address(road, city, zipCode)
+        self.address = address
         self.lessons = []
 
 
