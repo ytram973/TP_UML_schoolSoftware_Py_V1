@@ -2,9 +2,7 @@ from person import Person
 
 class Student(Person):
 
-    number: int = None
-
-    
+    number: int
 
     def __init__(self, number: int, firstName: str, lastName: str, age: int, road: str, city: str, zipCode: int):
         super().__init__(firstName, lastName, age)
