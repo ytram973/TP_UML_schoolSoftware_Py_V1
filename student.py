@@ -2,17 +2,17 @@ from person import Person
 
 class Student(Person):
 
-    number = None
+    number: int = None
 
     
 
-    def __init__(self, number, firstName, lastName, age, road, city, zipCode):
+    def __init__(self, number: int, firstName: str, lastName: str, age: int, road: str, city: str, zipCode: int):
         super().__init__(firstName, lastName, age)
         self.number = number
         self.set_address(road, city, zipCode)
         self.lessons = []
 
-    def set_address(self, road, city, zipCode):
+    def set_address(self, road: str, city: str, zipCode: int):
         self.road = road
         self.city = city
         self.zipCode = zipCode
@@ -20,10 +20,10 @@ class Student(Person):
     def get_number(self):
         return self.number
     
-    def set_number(self, number):
+    def set_number(self, number: int):
         self.number = number
 
-    def add_lesson(self, lesson):
+    def add_lesson(self, lesson: str):
         if lesson is None:
             raise ValueError("Lesson cannot be None")
         
