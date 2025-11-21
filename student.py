@@ -1,9 +1,8 @@
-from address import Address
 from person import Person
 
 class Student(Person):
 
-    number = None
+    number: int
 
     def __init__(self, number, firstname, lastname, age, address: Address):
         super().__init__(firstname, lastname, age, address)
@@ -13,10 +12,10 @@ class Student(Person):
     def get_number(self):
         return self.number
     
-    def set_number(self, number):
+    def set_number(self, number: int):
         self.number = number
 
-    def add_lesson(self, lesson):
+    def add_lesson(self, lesson: str):
         if lesson is None:
             raise ValueError("Lesson cannot be None")
         
