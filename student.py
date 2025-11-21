@@ -17,10 +17,9 @@ class Student(Person):
 
     def set_address(self, road: str, city: str, zipCode: int):
         """
-         Set the address of the student."""
-        self.road = road
-        self.city = city
-        self.zipCode = zipCode
+        Set the address of the student.
+        """
+        self.address = Address(road, city, zipCode)
 
 
     def get_number(self):
