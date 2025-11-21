@@ -1,44 +1,37 @@
+from address import Address
 from person import Person
 
-class Student(Person):
 
+class Student(Person):
     number: int
 
-    def __init__(self, number: int, firstName: str, lastName: str, age: int, road: str, city: str, zipCode: int):
-        super().__init__(firstName, lastName, age)
+    def __init__(self, number: int, firstname: str, lastname: str, age: int, address: Address):
+        super().__init__(firstname, lastname, age, address)
         self.number = number
-        self.set_address(road, city, zipCode)
         self.lessons = []
 
-    def set_address(self, road: str, city: str, zipCode: int):
-        self.road = road
-        self.city = city
-        self.zipCode = zipCode
-
-    def get_number(self):
+    def get_number(self) -> int:
         return self.number
-    
-    def set_number(self, number: int):
+
+    def set_number(self, number: int) -> None:
         self.number = number
 
-    def add_lesson(self, lesson: str):
+    def add_lesson(self, lesson: str) -> None:
         if lesson is None:
             raise ValueError("Lesson cannot be None")
-        
+
         if lesson not in self.lessons:
             self.lessons.append(lesson)
-        
+
     def get_lessons(self):
         return self.lessons
 
     def __str__(self):
         return (f"Student{{"
-            f"number : {self.number}, "
-            f"name : {self.getFullName()}', "
-            f"age : {self.getAge()}, "
-            f"road : {self.road}', "
-            f"city : {self.city}', "
-            f"zipCode : {self.zipCode}"
-            f"}}")
-    
-    
+                f"number : {self.number}, "
+                f"name : {self.get_fullname()}, "
+                f"age : {self.get_age()}, "
+                f"road : {self.address.road}, "
+                f"city : {self.address.city}, "
+                f"zipCode : {self.address.zip_code}"
+                f"}}")

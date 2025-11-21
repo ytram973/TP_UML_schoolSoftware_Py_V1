@@ -1,31 +1,23 @@
-
+from address import Address
 from person import Person
 
 
 class Teacher(Person):
-
     date: str
 
-    def __init__(self, firstName: str, lastName: str, age: int, date: str, road: str, city: str, zipCode: int):
-        super().__init__(firstName, lastName, age)
+    def __init__(self, firstname: str, lastname: str, age: int, date: str, address: Address):
+        super().__init__(firstname, lastname, age, address)
         self.date = date
-        self.set_address(road, city, zipCode)
 
-
-    def set_address(self, road: str, city: str, zipCode: int):
-        self.road = road
-        self.city = city
-        self.zipCode = zipCode
-
-    def get_date(self):
+    def get_date(self) -> str:
         return self.date
-    
+
     def __str__(self):
         return (f"Teacher{{"
-            f"name : {self.getFullName()}', "
-            f"age : {self.getAge()}, "
-            f"hireDate : {self.date}, "
-            f"road : {self.road}', "
-            f"city : {self.city}', "
-            f"zipCode : {self.zipCode}"
-            f"}}")
+                f"name : {self.get_fullname()}', "
+                f"age : {self.get_age()}, "
+                f"hireDate : {self.date}, "
+                f"road : {self.address.road}, "
+                f"city : {self.address.city}, "
+                f"zipCode : {self.address.zip_code}"
+                f"}}")
