@@ -1,5 +1,5 @@
-
 from address import Address
+
 
 class Person:
 
@@ -8,8 +8,6 @@ class Person:
         self.lastname = lastname
         self.age = age
         self.address = address
-
-        #Person.persons.append(self)
 
     def get_firstname(self) -> str:
         return self.firstname
@@ -31,12 +29,3 @@ class Person:
 
     def get_zip_code(self):
         return self.address.zip_code
-
-    def __repr__(self) -> str:
-        return (f"{self.firstname}, "
-                f"{self.lastname}, "
-                f"{self.age}ans : "
-                f"{self.address.road} "
-                f"{self.address.zip_code} "
-                f"{self.address.city}")
-
